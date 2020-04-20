@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://https://github.com/akafusheng/HowToUseLinux</id>
+    <id>https://https://FushengBlog.github.io</id>
     <title>Gridea</title>
-    <updated>2020-04-20T08:36:32.950Z</updated>
+    <updated>2020-04-20T09:16:32.770Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://https://github.com/akafusheng/HowToUseLinux"/>
-    <link rel="self" href="https://https://github.com/akafusheng/HowToUseLinux/atom.xml"/>
+    <link rel="alternate" href="https://https://FushengBlog.github.io"/>
+    <link rel="self" href="https://https://FushengBlog.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://https://github.com/akafusheng/HowToUseLinux/images/avatar.png</logo>
-    <icon>https://https://github.com/akafusheng/HowToUseLinux/favicon.ico</icon>
+    <logo>https://https://FushengBlog.github.io/images/avatar.png</logo>
+    <icon>https://https://FushengBlog.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[Ubantu桌面Linux安装MySQL以及配置初始密码]]></title>
-        <id>https://https://github.com/akafusheng/HowToUseLinux/post/ubantu-zhuo-mian-linux-an-zhuang-mysql-yi-ji-pei-zhi-chu-shi-mi-ma/</id>
-        <link href="https://https://github.com/akafusheng/HowToUseLinux/post/ubantu-zhuo-mian-linux-an-zhuang-mysql-yi-ji-pei-zhi-chu-shi-mi-ma/">
+        <id>https://https://FushengBlog.github.io/post/ubantu-zhuo-mian-linux-an-zhuang-mysql-yi-ji-pei-zhi-chu-shi-mi-ma/</id>
+        <link href="https://https://FushengBlog.github.io/post/ubantu-zhuo-mian-linux-an-zhuang-mysql-yi-ji-pei-zhi-chu-shi-mi-ma/">
         </link>
         <updated>2020-04-20T08:23:58.000Z</updated>
         <content type="html"><![CDATA[<h1 id="在ubantu中安装mysql数据库">在Ubantu中安装MySQL数据库</h1>
@@ -89,8 +89,8 @@ owners.
     </entry>
     <entry>
         <title type="html"><![CDATA[# 博客简介]]></title>
-        <id>https://https://github.com/akafusheng/HowToUseLinux/post/bo-ke-jian-jie/</id>
-        <link href="https://https://github.com/akafusheng/HowToUseLinux/post/bo-ke-jian-jie/">
+        <id>https://https://FushengBlog.github.io/post/bo-ke-jian-jie/</id>
+        <link href="https://https://FushengBlog.github.io/post/bo-ke-jian-jie/">
         </link>
         <updated>2020-04-20T03:11:17.000Z</updated>
         <content type="html"><![CDATA[<h2 id="说明">说明</h2>
@@ -112,8 +112,8 @@ owners.
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://https://github.com/akafusheng/HowToUseLinux/post/hello-gridea/</id>
-        <link href="https://https://github.com/akafusheng/HowToUseLinux/post/hello-gridea/">
+        <id>https://https://FushengBlog.github.io/post/hello-gridea/</id>
+        <link href="https://https://FushengBlog.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
