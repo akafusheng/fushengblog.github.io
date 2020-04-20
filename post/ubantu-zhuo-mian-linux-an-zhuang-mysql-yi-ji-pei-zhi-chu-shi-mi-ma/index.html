@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ubantu桌面Linux安装MySQL以及配置初始密码 | Gridea</title>
-<link rel="shortcut icon" href="https://https://FushengBlog.github.io/favicon.ico?v=1587373973151">
+<link rel="shortcut icon" href="https://https://FushengBlog.github.io/favicon.ico?v=1587374275050">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://https://FushengBlog.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Ubantu桌面Linux安装MySQL以及配置初始密码 | Gridea - Atom Feed" href="https://https://FushengBlog.github.io/atom.xml">
@@ -25,7 +25,7 @@ sudo apt-get install libmys..." />
       <div class="main-content">
         <div class="site-header">
   <a href="https://https://FushengBlog.github.io">
-  <img class="avatar" src="https://https://FushengBlog.github.io/images/avatar.png?v=1587373973151" alt="">
+  <img class="avatar" src="https://https://FushengBlog.github.io/images/avatar.png?v=1587374275050" alt="">
   </a>
   <h1 class="site-title">
     Gridea
@@ -105,18 +105,19 @@ sudo service mysql restart
 <p>不同于Red Hat Linux, Ubantu中的MySQL初始密码在cd /etc/mysql/debian.cnf文件中</p>
 <pre><code class="language-bash">sudo cat /etc/mysql/debian.cnf
 </code></pre>
-<p>debian.cnf文件内容<br>
-[client]<br>
-host     = localhost<br>
-user     = debian-sys-maint<br>
-password = TIEAUvnSE8sxfVa3<br>
-socket   = /var/run/mysqld/mysqld.sock<br>
-[mysql_upgrade]<br>
-host     = localhost<br>
-user     = debian-sys-maint<br>
-password = TIEAUvnSE8sxfVa3<br>
-socket   = /var/run/mysqld/mysqld.sock</p>
-<p>查看到用户名和密码后，登陆MySQL数据库</p>
+<h1 id="debiancnf文件内容">debian.cnf文件内容</h1>
+<pre><code>[client]
+host     = localhost
+user     = debian-sys-maint
+password = TIEAUvnSE8sxfVa3
+socket   = /var/run/mysqld/mysqld.sock
+[mysql_upgrade]
+host     = localhost
+user     = debian-sys-maint
+password = TIEAUvnSE8sxfVa3
+socket   = /var/run/mysqld/mysqld.sock
+</code></pre>
+<h1 id="查看到用户名和密码后登陆mysql数据库">查看到用户名和密码后，登陆MySQL数据库</h1>
 <pre><code class="language-bash">
 # 登陆MySQL
 mysql -udebian-sys-maint -p TIEAUvnSE8sxfVa3
@@ -167,6 +168,8 @@ owners.
                 <ul class="markdownIt-TOC">
 <li><a href="#%E5%9C%A8ubantu%E4%B8%AD%E5%AE%89%E8%A3%85mysql%E6%95%B0%E6%8D%AE%E5%BA%93">在Ubantu中安装MySQL数据库</a></li>
 <li><a href="#%E6%9F%A5%E7%9C%8Bmysql%E5%88%9D%E5%A7%8B%E5%AF%86%E7%A0%81">查看MySQL初始密码</a></li>
+<li><a href="#debiancnf%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9">debian.cnf文件内容</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E5%88%B0%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E5%90%8E%E7%99%BB%E9%99%86mysql%E6%95%B0%E6%8D%AE%E5%BA%93">查看到用户名和密码后，登陆MySQL数据库</a></li>
 <li><a href="#%E7%99%BB%E9%99%86%E5%B9%B6%E4%BF%AE%E6%94%B9%E6%88%90%E5%8A%9F">登陆并修改成功！</a></li>
 </ul>
 
