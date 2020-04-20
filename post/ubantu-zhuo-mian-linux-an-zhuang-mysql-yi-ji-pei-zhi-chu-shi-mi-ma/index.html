@@ -2,31 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title># 博客简介 | Gridea</title>
+<title>Ubantu桌面Linux安装MySQL以及配置初始密码 | Gridea</title>
 <link rel="shortcut icon" href="https://https://github.com/akafusheng/HowToUseLinux/favicon.ico?v=1587371782246">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://https://github.com/akafusheng/HowToUseLinux/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="# 博客简介 | Gridea - Atom Feed" href="https://https://github.com/akafusheng/HowToUseLinux/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Ubantu桌面Linux安装MySQL以及配置初始密码 | Gridea - Atom Feed" href="https://https://github.com/akafusheng/HowToUseLinux/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="说明
-本博客主要分享运维常用的Linux及Python内容
-Linux
-
-Linux常用操作、常用Shell脚本
-常用网络服务、安全配置
-集群配置以及监控
-Docker以及k8s
-
-Python
-
-常用Python脚本
-爬虫
-自动化运维
-
-..." />
+    <meta name="description" content="在Ubantu中安装MySQL数据库
+说明：Ubantu版本：18.4
+# 安装mysql
+sudo apt-get install mysql-server mysql-client
+sudo apt-get install libmys..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -89,46 +78,96 @@ Python
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              # 博客简介
+              Ubantu桌面Linux安装MySQL以及配置初始密码
             </h2>
             <div class="post-info">
               <span>
                 2020-04-20
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h2 id="说明">说明</h2>
-<p>本博客主要分享运维常用的Linux及Python内容</p>
-<h2 id="linux">Linux</h2>
-<ul>
-<li>Linux常用操作、常用Shell脚本</li>
-<li>常用网络服务、安全配置</li>
-<li>集群配置以及监控</li>
-<li>Docker以及k8s</li>
-</ul>
-<h2 id="python">Python</h2>
-<ul>
-<li>常用Python脚本</li>
-<li>爬虫</li>
-<li>自动化运维</li>
-</ul>
+                <h1 id="在ubantu中安装mysql数据库">在Ubantu中安装MySQL数据库</h1>
+<p>说明：Ubantu版本：18.4</p>
+<pre><code class="language-bash"># 安装mysql
+sudo apt-get install mysql-server mysql-client
+sudo apt-get install libmysqlclient-dev
+
+# 启动mysql
+sudo service mysql restart
+</code></pre>
+<h1 id="查看mysql初始密码">查看MySQL初始密码</h1>
+<p>不同于Red Hat Linux, Ubantu中的MySQL初始密码在cd /etc/mysql/debian.cnf文件中</p>
+<pre><code class="language-bash">sudo cat /etc/mysql/debian.cnf
+</code></pre>
+<p>debian.cnf文件内容<br>
+[client]<br>
+host     = localhost<br>
+user     = debian-sys-maint<br>
+password = TIEAUvnSE8sxfVa3<br>
+socket   = /var/run/mysqld/mysqld.sock<br>
+[mysql_upgrade]<br>
+host     = localhost<br>
+user     = debian-sys-maint<br>
+password = TIEAUvnSE8sxfVa3<br>
+socket   = /var/run/mysqld/mysqld.sock</p>
+<p>查看到用户名和密码后，登陆MySQL数据库</p>
+<pre><code class="language-bash">
+# 登陆MySQL
+mysql -udebian-sys-maint -p TIEAUvnSE8sxfVa3
+
+# 修改MySQL密码
+
+mysql&gt; use mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+# 修改密码
+mysql&gt; update mysql.user set authentication_string=password('123456') where user='root' and Host ='localhost';
+Query OK, 1 row affected, 1 warning (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 1
+
+mysql&gt; update user set plugin=&quot;mysql_native_password&quot;;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 4  Changed: 1  Warnings: 0
+
+mysql&gt; flush privileges;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; quit;
+Bye
+
+# 重启MySQL服务
+sudo service mysql restart
+
+#使用新密码进行登陆
+mysql -uroot -p123456
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.29-0ubuntu0.18.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+</code></pre>
+<h1 id="登陆并修改成功">登陆并修改成功！</h1>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E8%AF%B4%E6%98%8E">说明</a></li>
-<li><a href="#linux">Linux</a></li>
-<li><a href="#python">Python</a></li>
-</ul>
-</li>
+<li><a href="#%E5%9C%A8ubantu%E4%B8%AD%E5%AE%89%E8%A3%85mysql%E6%95%B0%E6%8D%AE%E5%BA%93">在Ubantu中安装MySQL数据库</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8Bmysql%E5%88%9D%E5%A7%8B%E5%AF%86%E7%A0%81">查看MySQL初始密码</a></li>
+<li><a href="#%E7%99%BB%E9%99%86%E5%B9%B6%E4%BF%AE%E6%94%B9%E6%88%90%E5%8A%9F">登陆并修改成功！</a></li>
 </ul>
 
               </div>
@@ -139,9 +178,9 @@ Python
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://https://github.com/akafusheng/HowToUseLinux/post/hello-gridea/">
+            <a href="https://https://github.com/akafusheng/HowToUseLinux/post/bo-ke-jian-jie/">
               <h3 class="post-title">
-                Hello Gridea
+                # 博客简介
               </h3>
             </a>
           </div>
